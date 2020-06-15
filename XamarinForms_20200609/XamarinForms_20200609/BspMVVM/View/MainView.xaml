@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinForms_20200609.BspMVVM.View.MainView"
+             xmlns:vm="clr-namespace:XamarinForms_20200609.BspMVVM.ViewModel"
+             x:Name="Pg_Main">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel ContextPage="{x:Reference Pg_Main}"/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding NeuerVorname}" Placeholder="Vorname"/>
+            <Entry Text="{Binding NeuerNachname}" Placeholder="Nachname"/>
+            <Button Text="Hinzufügen" Command="{Binding HinzufuegenCmd}"/>
+            <ListView ItemsSource="{Binding PersonenListe}"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsRefreshing}"
+                      RefreshCommand="{Binding RefreshCmd}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Löschen" Command="{Binding Path=BindingContext.LoeschenCmd, Source={x:Reference Pg_Main}}" CommandParameter="{Binding}"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Vorname}"/>
+                                <Label Text="{Binding Nachname}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

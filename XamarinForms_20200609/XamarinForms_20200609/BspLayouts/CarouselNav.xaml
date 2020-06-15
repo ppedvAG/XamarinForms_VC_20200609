@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinForms_20200609.BspLayouts.CarouselNav"
+              xmlns:uebung="clr-namespace:XamarinForms_20200609.Uebungen">
+
+    <ContentPage Title="Content1">
+        <Label Text="Page1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+    </ContentPage>
+
+    <uebung:GridLayoutUebung Title="Grid"/>
+
+    <uebung:RelativeAbsoluteLayoutUebung Title="Relativ"/>
+
+    <uebung:StackLayoutUebung Title="Stack"/>
+
+</CarouselPage>

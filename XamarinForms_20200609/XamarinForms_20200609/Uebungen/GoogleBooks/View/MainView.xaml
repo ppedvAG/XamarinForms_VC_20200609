@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinForms_20200609.Uebungen.GoogleBooks.View.MainView"
+             xmlns:vm="clr-namespace:XamarinForms_20200609.Uebungen.GoogleBooks.ViewModel">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <SearchBar Text="{Binding SearchString}" Placeholder="search..." SearchCommand="{Binding SearchCommand}"/>
+
+        <ListView ItemsSource="{Binding BookList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell
+                        Text="{Binding VolumeInfo.Title}"
+                        Detail="{Binding VolumeInfo.Description}"
+                        ImageSource="{Binding VolumeInfo.ImageLinks.GetSmallThumbnail}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

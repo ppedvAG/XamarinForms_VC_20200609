@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinForms_20200609.Uebungen.RelativeAbsoluteLayoutUebung">
+    <ContentPage.Content>
+
+        <!--AbsoluteLayout-->
+
+        <AbsoluteLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.02,0.75,0.33"
+                         AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="#F7F7F7"
+                         Padding="10"
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="$11.95"
+                       FontSize="50"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Add $7.99 Credit"
+                        TextColor="White"
+                        BackgroundColor="DarkCyan"
+                        CornerRadius="15"
+                        WidthRequest="250"/>
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All"
+                         AbsoluteLayout.LayoutBounds="0.5,0.4,0.8,0.15"
+                         Padding="7">
+                <Label Text="Why pay for credit?"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+        </AbsoluteLayout>
+
+        <!--RelativeLayout-->
+
+        <!--<RelativeLayout VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand">
+
+            <StackLayout BackgroundColor="#F7F7F7"
+                         Padding="15"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.33}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.70}"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.05}">
+                <Label Text="$11.95"
+                       FontSize="50"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+                <Button Text="Add $7.99 Credit"
+                        TextColor="White"
+                        BackgroundColor="DarkCyan"
+                        CornerRadius="15"
+                        WidthRequest="250"
+                        VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}"
+                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
+                <Label Text="Why pay for credit?"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Label Text="Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates."
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            
+        </RelativeLayout>-->
+
+    </ContentPage.Content>
+</ContentPage>

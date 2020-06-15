@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinForms_20200609.MainPage"
+             xmlns:local="clr-namespace:XamarinForms_20200609">
+    <ContentPage.Resources>
+        <x:String x:Key="btnText">Hallo Welt, wie gehts</x:String>
+        <x:Double x:Key="btnFontSize">24.0</x:Double>
+        <local:FaktorConverter x:Key="factorConverter"/>
+    </ContentPage.Resources>
+
+    <ScrollView HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                 Padding="10, 20, 30, 40">
+
+        <StackLayout Orientation="Vertical"
+                 Spacing="10"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand">
+            <Label x:Name="Lbl_Eins" 
+               Text="{StaticResource btnText}"
+               HorizontalOptions="Center">
+                <Label.TextColor>
+                    <!--<OnPlatform Android="Blue" iOS="Red" UWP="Green"/>-->
+                    <OnIdiom Phone="Red"/>
+                </Label.TextColor>
+            </Label>
+
+            <Label HorizontalOptions="Center">
+                <Label.Text>
+                    Hallo Welt
+                </Label.Text>
+                <Label.TextColor>
+                    Blue
+                </Label.TextColor>
+            </Label>
+
+            <Label HorizontalOptions="Center">
+                Hallo Welt
+            </Label>
+
+            <Button x:Name="Btn_KlickMich" 
+                Text="{StaticResource btnText}"
+                FontSize="{StaticResource btnFontSize}"
+                Clicked="Btn_KlickMich_Clicked"/>
+            <Button Text="Expliziet"
+                Style="{StaticResource btnStyle}"/>
+            <ImageButton Source="test.png"
+                     WidthRequest="50"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Slider Minimum="0"
+                    Maximum="100"
+                    x:Name="Sdr_Binding"
+                    WidthRequest="250"/>
+                <Label Text="{Binding Source={x:Reference Sdr_Binding}, Path=Value, StringFormat='Wert: {0}'}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Slider Minimum="0"
+                    Maximum="100"
+                    x:Name="Sdr_Binding2"
+                    WidthRequest="250"/>
+                <Label Text="{Binding Source={x:Reference Sdr_Binding2}, Path=Value, StringFormat='Wert: {0}',
+                          Converter={StaticResource factorConverter}, ConverterParameter=2.5}"/>
+            </StackLayout>
+
+            <Entry Placeholder="Vorname" x:Name="Entry_FirstName"/>
+            <Entry Placeholder="Name" x:Name="Entry_LastName"/>
+            <Button Text="OK" x:Name="Btn_OK" Clicked="Btn_OK_Clicked"/>
+            <ListView x:Name="LstV_Personen" VerticalOptions="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding}"/>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" Clicked="MenuItem_Clicked"  CommandParameter="{Binding}"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Goto StackÜbung" Clicked="Button_Clicked"/>
+                <Button Text="Carousel" Clicked="Button_Clicked_1"/>
+                <Button Text="Tabbed" Clicked="Button_Clicked_2"/>
+            </StackLayout>
+
+            <Button Text="MC Send" Clicked="Button_Clicked_3"/>
+
+            <Label x:Name="Lbl_Loc"/>
+            <Button x:Name="Btn_Loc"/>
+
+        </StackLayout>
+    </ScrollView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="Btn_OK_Clicked"/>
+        <ToolbarItem Text="Clear" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+</ContentPage>
