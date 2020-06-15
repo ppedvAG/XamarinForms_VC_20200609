@@ -5,6 +5,7 @@ using XamarinForms_20200609.Uebungen.PersonenDb.Model;
 
 namespace XamarinForms_20200609.Uebungen.PersonenDb
 {
+    //Statische Klasse mit globalen Objekten (kann auch Service- und Controllerobjekte beinhalten)
     public static class StaticObjects
     {
         private static List<Person> personenListe;

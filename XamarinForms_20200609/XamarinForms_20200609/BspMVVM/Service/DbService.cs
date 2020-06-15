@@ -7,6 +7,8 @@ using XamarinForms_20200609.BspMVVM.Model;
 
 namespace XamarinForms_20200609.BspMVVM.Service
 {
+    //In MVVM gehören Service- und Controller-Klassen mit zum Model
+    //(bez. SQLite vgl. Uebungen/PersonenDb/Services)
     public class DbService
     {
         

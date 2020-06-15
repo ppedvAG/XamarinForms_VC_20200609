@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+    <!--vgl. BspMVVM/View-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -7,12 +8,12 @@
              x:Class="XamarinForms_20200609.Uebungen.GoogleBooks.View.MainView"
              xmlns:vm="clr-namespace:XamarinForms_20200609.Uebungen.GoogleBooks.ViewModel">
 
+        <!--Zuweisung des ViewModels-->
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <!-- Place new controls here -->
         <SearchBar Text="{Binding SearchString}" Placeholder="search..." SearchCommand="{Binding SearchCommand}"/>
 
         <ListView ItemsSource="{Binding BookList}">

@@ -10,6 +10,10 @@
         <!--AbsoluteLayout-->
 
         <AbsoluteLayout>
+            <!--In einem AbsoluteLayout ist jedem Element eine absolute Position zugeordnet-->
+            <!--Diese wird durch die Property LayouBounds defniert. Die vier Zahlen repräsentieren X-Position, Y-Position, Breite, Höhe-->
+            <!--Die Property LayoutFlags definiert, welche der vier Zahlen in relativen Werten angegeben sind, anstatt in standartmäßigen
+            absoluten Werten-->
 
             <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.02,0.75,0.33"
                          AbsoluteLayout.LayoutFlags="All"
@@ -42,6 +46,9 @@
         </AbsoluteLayout>
 
         <!--RelativeLayout-->
+        <!--In RelativeLayouts ist jedem Element eine Position relativ zum umgebenden oder anderen UI-Elemente zugeordnet-->
+        <!--Den view untenstehenden Constraint-Properties werden ConstraintExpressions zugeordnet, welche definieren, an welchem
+        anderen Objekt und welcher Property die Ralationen gemessen wird und um welchen Faktor und welche Konstante diese verändert wird-->
 
         <!--<RelativeLayout VerticalOptions="FillAndExpand"
                         HorizontalOptions="FillAndExpand">

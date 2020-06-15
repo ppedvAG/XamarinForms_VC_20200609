@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace XamarinForms_20200609.BspLayouts.MasterDetail
 {
+    //Dieser CodeBehind wird automatisch durch das MasterDetailPage-Template generiert
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MDP : MasterDetailPage
     {

@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+    <!--vgl. CodeBehind-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -10,9 +11,11 @@
             <Label x:Name="Lbl_Main"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Image x:Name="Img_Cam"/>
+            
+            <!--<Image x:Name="Img_Cam"/>
             <Button Text="FOTO" x:Name="Btn_Cam"
-                    Clicked="Btn_Cam_Clicked"/>
+                    Clicked="Btn_Cam_Clicked"/>-->
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

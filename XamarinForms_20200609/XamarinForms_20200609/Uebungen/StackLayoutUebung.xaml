@@ -19,8 +19,12 @@
             <Setter Property="FontSize" Value="30"/>
         </Style>
     </ContentPage.Resources>
-
-    <StackLayout VerticalOptions="CenterAndExpand">
+    
+    <!--StackLayout ordnen ihre Children-Elemente gemäß ihrer Orientytion-Property unter- oder nebeneinander an.
+    Spacing gibt den Abstand zwischen den einzelnen Elementen an-->
+    <StackLayout VerticalOptions="CenterAndExpand"
+                 Orientation="Vertical"
+                 Spacing="2">
         <Label Text="Welcome to Xamarin"
                HorizontalOptions="Center"
                Style="{StaticResource Lbl_Sty_Header}"/>

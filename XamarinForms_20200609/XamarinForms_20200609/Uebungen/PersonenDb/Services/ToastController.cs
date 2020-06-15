@@ -13,6 +13,8 @@ namespace XamarinForms_20200609.Uebungen.PersonenDb.Services
 
     public static class ToastController
     {
+        //vgl. PersonenDbController
+        //Globaler Zugriff erfolgt hier über statische Klasse
         public static void ShowToastMessage(string message, ToastDuration duration)
         {
             switch (duration)

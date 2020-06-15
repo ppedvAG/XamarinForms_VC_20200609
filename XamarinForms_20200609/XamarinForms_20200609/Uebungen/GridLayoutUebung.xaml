@@ -17,6 +17,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
+        <!--In einem Grid können Anzahl der Spalten und Zeilen sowie deren Breite/Höhe definiert werden-->
         <Grid Padding="40"
               RowSpacing="10"
               ColumnSpacing="10">
@@ -33,7 +34,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
+            
+            <!--Jedem Element muss eine Row und eine Column zugewiesen werden, in der es angezeigt werden soll.
+            Mittels RowSpan und ColumnSpan kann ein Element mehrere Zeilen/Spalten umfassen-->
             <Label Text="1234"
                    Grid.ColumnSpan="3"
                    VerticalOptions="CenterAndExpand"

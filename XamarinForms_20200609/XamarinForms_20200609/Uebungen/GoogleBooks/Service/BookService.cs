@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using XamarinForms_20200609.Uebungen.GoogleBooks.Model;
 
+//Service-Klasse zum Zugriff auf GoogleBooks
 namespace XamarinForms_20200609.Uebungen.GoogleBooks.Service
 {
     public class BookService
@@ -15,9 +16,11 @@ namespace XamarinForms_20200609.Uebungen.GoogleBooks.Service
 
             using (WebClient client = new WebClient())
             {
+                //WebClient läd Bücherliste herunter
                 json = client.DownloadString($"https://www.googleapis.com/books/v1/volumes?q={searchstring}");
             }
 
+            //Json deserialisiert den String in Model-Objekte
             return JsonConvert.DeserializeObject<GBook>(json);
         }
     }

@@ -5,6 +5,8 @@ using Xamarin.Forms;
 
 namespace XamarinForms_20200609.Uebungen.PersonenDb.Services
 {
+    //vgl. PersonenDbController
+    //Globaler Zugriff erfolgt hier über statische Klasse
     public static class JsonController
     {
         public static void Save(object data)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamarinForms_20200609.BspLayouts.MasterDetail
 {
-
+    //Diesen Model-Klasse wird vom MasterDetailPage-Template automatisch generiert
     public class MDPMasterMenuItem
     {
         public MDPMasterMenuItem()

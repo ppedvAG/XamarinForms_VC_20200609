@@ -1,12 +1,17 @@
-﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<!--ResourceDictionaries können jegliche Art von Xaml-Ressourcen beinhalten, müssen aber in einem lokalen 
+    Ressourcen-Tag angemeldet werden. Vgl. App.xaml-->
+    <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-
+    
+    <!--Style sind vordefinierte Property-Belegungen für einzelne Steuerelemente-->
+    <!--Wenn Styles einen Key haben, müssen die UI-Elemente diese mittels einer StaticResource-Bindung anfordern-->
     <Style TargetType="Button" x:Key="btnStyle">
         <Setter Property="BackgroundColor" Value="Blue"/>
         <Setter Property="TextColor" Value="White"/>
         <Setter Property="FontSize" Value="30"/>
     </Style>
 
+    <!--Wenn Style keine Keys haben gelten sie als global und alle UI-Elemente des Typs in dem jeweiligen Bereich nehmen diesen Style an-->
     <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="Orange"/>
         <Setter Property="TextColor" Value="Blue"/>

@@ -1,4 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+    <!--Views bezeichnen in MVVM die UIs. Diese sind über den BindingContext und entsprechende Kurzbindungen an ein ViewModel
+    gebunden, haben darüber hinaus aber keinerlei direkte Referenzen in andere Programmteile. Der CodeBehind ist mit Außnahme
+    des Konstruktors leer (vgl. CodeBehind).-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -8,14 +11,18 @@
              xmlns:vm="clr-namespace:XamarinForms_20200609.BspMVVM.ViewModel"
              x:Name="Pg_Main">
 
+    <!--Setzen des BindingContextes aus das entsprechende ViewModel (vgl. ViewModel/MainViewModel.cs)-->
+    <!--Dem ViewModel können an dieser Stelle Property-Belegungen mitgegeben werden.-->
     <ContentPage.BindingContext>
         <vm:MainViewModel ContextPage="{x:Reference Pg_Main}"/>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout>
+            <!--Die einzelnen Properties sind über Kurzbindungen an Properties des ViewModels angebunden-->
             <Entry Text="{Binding NeuerVorname}" Placeholder="Vorname"/>
             <Entry Text="{Binding NeuerNachname}" Placeholder="Nachname"/>
+            <!--Events werden über die Command-Property per Kurzbindung an Commend-Objekte im ViewModel gebunden-->
             <Button Text="Hinzufügen" Command="{Binding HinzufuegenCmd}"/>
             <ListView ItemsSource="{Binding PersonenListe}"
                       IsPullToRefreshEnabled="True"
